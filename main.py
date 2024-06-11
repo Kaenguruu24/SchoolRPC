@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from pypresence import Presence
 
 
-CLIENT = "LOADED_FROM_ENV_FILE"
+CLIENT = "CLIENT_ID LOADED FROM ENV FILE"
 
 schedule = None
 rpc = None
