@@ -40,6 +40,7 @@ def update_rpc():
 
         current_day = list(schedule.keys())[week_day_idx]
         current_lesson = None
+        current_lesson_changed = False
 
         for lesson in schedule[current_day]:
             # Checking if the lesson is valid, the two week cycle is only needed because of a sports lesson that is only every second week
@@ -66,7 +67,7 @@ def update_rpc():
                             start_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_start_minutes)).timestamp())
                             end_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_end_minutes)).timestamp())
                             rpc.update(details="Freistunde", state="Entfall", start=start_epoch, end=end_epoch, large_image="logo", large_text="Otto-Kühne-Schule Godesberg")
-                            current_lesson = None
+                            current_lesson_changed = True
                         else:
                             current_lesson["subject"] = exception["subject"]
                             current_lesson["room"] = exception["room"]
@@ -79,6 +80,7 @@ def update_rpc():
             # Find next valid lesson
             next_lesson = None
             for day in list(schedule.keys())[week_day_idx:]:
+                if day == "exceptions": continue
                 for lesson in schedule[day]:
                     if lesson["subject"] != "NONE":
                         if "two_week_cycle" in lesson:
@@ -99,13 +101,18 @@ def update_rpc():
                 next_start_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_start_minutes)).timestamp())
                 next_end_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_end_minutes)).timestamp())
                 rpc.update(details="Pause", state="  ", start=next_start_epoch, end=next_end_epoch, large_image="logo", large_text="Otto-Kühne-Schule Godesberg")
+            else:
+                # If no lesson is found, we display free time
+                end_last_lesson = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=schedule[list(schedule.keys())[week_day_idx]][len(schedule[list(schedule.keys())[week_day_idx]]) - 1]["end"][0] * 60 + schedule[list(schedule.keys())[week_day_idx]][len(schedule[list(schedule.keys())[week_day_idx]]) - 1]["end"][1])).timestamp())
+                rpc.update(details="Freizeit", state="  ", start=end_last_lesson, large_image="logo", large_text="Otto-Kühne-Schule Godesberg")
 
             time.sleep(15)
             continue
 
-        start_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_start_minutes)).timestamp())
-        end_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_end_minutes)).timestamp())
-        rpc.update(details=current_lesson["subject"], state="in Raum " + current_lesson["room"], start=start_epoch, end=end_epoch, large_image="logo", large_text="Otto-Kühne-Schule Godesberg")
+        if not current_lesson_changed:
+            start_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_start_minutes)).timestamp())
+            end_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_end_minutes)).timestamp())
+            rpc.update(details=current_lesson["subject"], state="in Raum " + current_lesson["room"], start=start_epoch, end=end_epoch, large_image="logo", large_text="Otto-Kühne-Schule Godesberg")
 
         time.sleep(15)
 

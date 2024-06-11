@@ -362,6 +362,14 @@
             "teacher": "qua",
             "double": true,
             "cancelled": true
+        },
+        {
+            "day": "tuesday",
+            "subject": "Deutsch GK 4",
+            "room": "A2.15",
+            "teacher": "ger",
+            "double": true,
+            "cancelled": true
         }
     ]
 }
