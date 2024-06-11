@@ -146,6 +146,12 @@ def main():
     global schedule
     global rpc
     global CLIENT
+
+    if time.localtime().tm_wday < 0 or time.localtime().tm_wday > 4:
+        print("This day ain't made for the both of us")
+        time.sleep(4)
+        return
+
     # Load data
     try:
         with open("schedule.json", encoding="utf8") as f:
