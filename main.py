@@ -13,6 +13,69 @@ CLIENT = "CLIENT_ID LOADED FROM ENV FILE"
 schedule = None
 rpc = None
 
+def get_current_lesson() -> dict:
+    """This function returns the current lesson and a boolean indicating if the lesson has changed since the last call"""
+    # Get current time and day
+    current_time = time.localtime()
+    week_day_idx = current_time.tm_wday
+    current_hour = current_time.tm_hour
+    current_minute = current_time.tm_min
+
+    # Ignoring weekends
+    if week_day_idx < 0 or week_day_idx > 4:
+        print("This day ain't made for both of us")
+        return None
+
+    current_day = list(schedule.keys())[week_day_idx]
+    current_lesson = None
+
+    for lesson in schedule[current_day]:
+        # Checking if the lesson is valid, the two week cycle is only needed because of a sports lesson that is only every second week
+        if lesson["subject"] == "NONE":
+            return None
+        if"two_week_cycle" in lesson:
+            if lesson["two_week_cycle"] == "even" and datetime.date(current_time.tm_year, current_time.tm_mon, current_time.tm_mday).isocalendar()[1] % 2 != 0:
+                print("TWC: Even week, skipping lesson")
+                return None
+            if lesson["two_week_cycle"] == "odd" and datetime.date(current_time.tm_year, current_time.tm_mon, current_time.tm_mday).isocalendar()[1] % 2 == 0:
+                print("TWC: Odd week, skipping lesson")
+                return None
+
+        # Check if lesson is currently ongoing
+        current_time_minutes = current_hour * 60 + current_minute
+        lesson_start_minutes = lesson["start"][0] * 60 + lesson["start"][1]
+        lesson_end_minutes = lesson["end"][0] * 60 + lesson["end"][1]
+        if lesson_start_minutes <= current_time_minutes <= lesson_end_minutes:
+            # Check if there is an exception for this lesson
+            current_lesson = lesson
+            return current_lesson
+    return current_lesson
+
+
+def get_next_lesson() -> dict:
+    """This function returns the next lesson that is scheduled in the current day. If no lesson is found, it returns None."""
+    # Get current time and day
+    current_time = time.localtime()
+    week_day_idx = current_time.tm_wday
+    current_hour = current_time.tm_hour
+    current_minute = current_time.tm_min
+    current_time_minutes = current_hour * 60 + current_minute
+
+    for day in list(schedule.keys())[week_day_idx:]:
+        if day == "exceptions":
+            continue
+        for lesson in schedule[day]:
+            if lesson["subject"] != "NONE":
+                if "two_week_cycle" in lesson:
+                    if lesson["two_week_cycle"] == "even" and datetime.date(current_time.tm_year, current_time.tm_mon, current_time.tm_mday).isocalendar()[1] % 2 != 0:
+                        continue
+                    if lesson["two_week_cycle"] == "odd" and datetime.date(current_time.tm_year, current_time.tm_mon, current_time.tm_mday).isocalendar()[1] % 2 == 0:
+                        continue
+                lesson_start_minutes = lesson["start"][0] * 60 + lesson["start"][1]
+                if lesson_start_minutes >= current_time_minutes:
+                    next_lesson = lesson
+                    return next_lesson
+
 def connect_to_discord() -> Presence:
     """This tries to connect to the Discord client and returns the RPC object if successful. If not, it returns None."""
     try:
@@ -32,69 +95,14 @@ def update_rpc():
         week_day_idx = current_time.tm_wday
         current_hour = current_time.tm_hour
         current_minute = current_time.tm_min
-
-        # Ignoring weekends
-        if week_day_idx < 0 or week_day_idx > 4:
-            print("This day ain't made for both of us")
-            continue
-
         current_day = list(schedule.keys())[week_day_idx]
-        current_lesson = None
-        current_lesson_changed = False
 
-        for lesson in schedule[current_day]:
-            # Checking if the lesson is valid, the two week cycle is only needed because of a sports lesson that is only every second week
-            if lesson["subject"] == "NONE":
-                continue
-            if"two_week_cycle" in lesson:
-                if lesson["two_week_cycle"] == "even" and datetime.date(current_time.tm_year, current_time.tm_mon, current_time.tm_mday).isocalendar()[1] % 2 != 0:
-                    print("TWC: Even week, skipping lesson")
-                    continue
-                if lesson["two_week_cycle"] == "odd" and datetime.date(current_time.tm_year, current_time.tm_mon, current_time.tm_mday).isocalendar()[1] % 2 == 0:
-                    print("TWC: Odd week, skipping lesson")
-                    continue
-
-            # Check if lesson is currently ongoing
-            current_time_minutes = current_hour * 60 + current_minute
-            lesson_start_minutes = lesson["start"][0] * 60 + lesson["start"][1]
-            lesson_end_minutes = lesson["end"][0] * 60 + lesson["end"][1]
-            if lesson_start_minutes <= current_time_minutes <= lesson_end_minutes:
-                # Check if there is an exception for this lesson
-                current_lesson = lesson
-                for exception in schedule["exceptions"]:
-                    if exception["day"] == current_day and exception["subject"] == lesson["subject"]:
-                        if exception["cancelled"]:
-                            start_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_start_minutes)).timestamp())
-                            end_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_end_minutes)).timestamp())
-                            rpc.update(details="Freistunde", state="Entfall", start=start_epoch, end=end_epoch, large_image="logo", large_text="Otto-Kühne-Schule Godesberg")
-                            current_lesson_changed = True
-                        else:
-                            current_lesson["subject"] = exception["subject"]
-                            current_lesson["room"] = exception["room"]
-                            current_lesson["double"] = exception["double"]
-                            current_lesson["teacher"] = exception["teacher"]
-                break
+        current_lesson = get_current_lesson()
 
         # If no active lesson is found, we display pause
         if current_lesson is None:
             # Find next valid lesson
-            next_lesson = None
-            for day in list(schedule.keys())[week_day_idx:]:
-                if day == "exceptions": continue
-                for lesson in schedule[day]:
-                    if lesson["subject"] != "NONE":
-                        if "two_week_cycle" in lesson:
-                            if lesson["two_week_cycle"] == "even" and datetime.date(current_time.tm_year, current_time.tm_mon, current_time.tm_mday).isocalendar()[1] % 2 != 0:
-                                continue
-                            if lesson["two_week_cycle"] == "odd" and datetime.date(current_time.tm_year, current_time.tm_mon, current_time.tm_mday).isocalendar()[1] % 2 == 0:
-                                continue
-                        lesson_start_minutes = lesson["start"][0] * 60 + lesson["start"][1]
-                        if lesson_start_minutes >= current_time_minutes:
-                            next_lesson = lesson
-                            break
-                if next_lesson:
-                    break
-
+            next_lesson = get_next_lesson()
             if next_lesson:
                 lesson_start_minutes = current_hour * 60 + current_minute
                 lesson_end_minutes = next_lesson["start"][0] * 60 + next_lesson["start"][1]
@@ -108,6 +116,23 @@ def update_rpc():
 
             time.sleep(15)
             continue
+
+        lesson_start_minutes = current_lesson["start"][0] * 60 + current_lesson["start"][1]
+        lesson_end_minutes = current_lesson["end"][0] * 60 + current_lesson["end"][1]
+
+        # Check for unscheduled changes
+        for exception in schedule["exceptions"]:
+            if exception["day"] == current_day and exception["subject"] == current_lesson["subject"]:
+                if exception["cancelled"]:
+                    start_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_start_minutes)).timestamp())
+                    end_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_end_minutes)).timestamp())
+                    rpc.update(details="Freistunde", state="Entfall", start=start_epoch, end=end_epoch, large_image="logo", large_text="Otto-Kühne-Schule Godesberg")
+                    current_lesson_changed = True
+                else:
+                    current_lesson["subject"] = exception["subject"]
+                    current_lesson["room"] = exception["room"]
+                    current_lesson["double"] = exception["double"]
+                    current_lesson["teacher"] = exception["teacher"]
 
         if not current_lesson_changed:
             start_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_start_minutes)).timestamp())
