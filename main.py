@@ -16,7 +16,7 @@ rpc = None
 def connect_to_discord() -> Presence:
     """This tries to connect to the Discord client and returns the RPC object if successful. If not, it returns None."""
     try:
-        RPC = Presence(CLIENT,pipe=0)
+        RPC = Presence(CLIENT, pipe=0)
         RPC.connect()
 
         return RPC
@@ -58,12 +58,48 @@ def update_rpc():
             lesson_start_minutes = lesson["start"][0] * 60 + lesson["start"][1]
             lesson_end_minutes = lesson["end"][0] * 60 + lesson["end"][1]
             if lesson_start_minutes <= current_time_minutes <= lesson_end_minutes:
+                # Check if there is an exception for this lesson
                 current_lesson = lesson
+                for exception in schedule["exceptions"]:
+                    if exception["day"] == current_day and exception["subject"] == lesson["subject"]:
+                        if exception["cancelled"]:
+                            start_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_start_minutes)).timestamp())
+                            end_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_end_minutes)).timestamp())
+                            rpc.update(details="Freistunde", state="Entfall", start=start_epoch, end=end_epoch, large_image="logo", large_text="Otto-Kühne-Schule Godesberg")
+                            current_lesson = None
+                        else:
+                            current_lesson["subject"] = exception["subject"]
+                            current_lesson["room"] = exception["room"]
+                            current_lesson["double"] = exception["double"]
+                            current_lesson["teacher"] = exception["teacher"]
                 break
 
-        # If no lesson is found, we just display something else
+        # If no active lesson is found, we display pause
         if current_lesson is None:
-            print("No lesson found")
+            # Find next valid lesson
+            next_lesson = None
+            for day in list(schedule.keys())[week_day_idx:]:
+                for lesson in schedule[day]:
+                    if lesson["subject"] != "NONE":
+                        if "two_week_cycle" in lesson:
+                            if lesson["two_week_cycle"] == "even" and datetime.date(current_time.tm_year, current_time.tm_mon, current_time.tm_mday).isocalendar()[1] % 2 != 0:
+                                continue
+                            if lesson["two_week_cycle"] == "odd" and datetime.date(current_time.tm_year, current_time.tm_mon, current_time.tm_mday).isocalendar()[1] % 2 == 0:
+                                continue
+                        lesson_start_minutes = lesson["start"][0] * 60 + lesson["start"][1]
+                        if lesson_start_minutes >= current_time_minutes:
+                            next_lesson = lesson
+                            break
+                if next_lesson:
+                    break
+
+            if next_lesson:
+                lesson_start_minutes = current_hour * 60 + current_minute
+                lesson_end_minutes = next_lesson["start"][0] * 60 + next_lesson["start"][1]
+                next_start_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_start_minutes)).timestamp())
+                next_end_epoch = int((datetime.datetime.strptime(str(current_time.tm_year) + "-" + str(current_time.tm_mon) + "-" + str(current_time.tm_mday), "%Y-%m-%d") + datetime.timedelta(minutes=lesson_end_minutes)).timestamp())
+                rpc.update(details="Pause", state="  ", start=next_start_epoch, end=next_end_epoch, large_image="logo", large_text="Otto-Kühne-Schule Godesberg")
+
             time.sleep(15)
             continue
 
