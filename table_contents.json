@@ -43,8 +43,8 @@
             ]
         },
         {
-            "subject": "Pädagogik GK 1",
-            "room": "A2.18",
+            "subject": "P\u00e4dagogik GK 1",
+            "room": "N2.05",
             "teacher": "qua",
             "double": true,
             "start": [
@@ -73,7 +73,7 @@
             ]
         },
         {
-            "subject": "Mathematik LK 2",
+            "subject": "M  L2",
             "room": "A2.18",
             "teacher": "hof",
             "double": false,
@@ -87,7 +87,10 @@
             ]
         },
         {
-            "subject": "NONE",
+            "subject": "Klausur",
+            "room": "K",
+            "teacher": "lux",
+            "double": false,
             "start": [
                 10,
                 30
@@ -112,7 +115,7 @@
             ]
         },
         {
-            "subject": "Deutsch GK 4",
+            "subject": "D  G4",
             "room": "A2.15",
             "teacher": "ger",
             "double": true,
@@ -123,21 +126,6 @@
             "end": [
                 15,
                 5
-            ]
-        },
-        {
-            "subject": "Sport GK 5",
-            "room": "TH",
-            "teacher": "bsn",
-            "double": true,
-            "two_week_cycle": "even",
-            "start": [
-                15,
-                10
-            ],
-            "end": [
-                16,
-                40
             ]
         }
     ],
@@ -157,7 +145,7 @@
             ]
         },
         {
-            "subject": "Pädagogik GK 1",
+            "subject": "P\u00e4dagogik GK 1",
             "room": "A2.18",
             "teacher": "qua",
             "double": false,
@@ -185,7 +173,7 @@
             ]
         },
         {
-            "subject": "Mathematik LK 2",
+            "subject": "M  L2",
             "room": "A2.18",
             "teacher": "hof",
             "double": true,
@@ -216,7 +204,7 @@
     "thursday": [
         {
             "subject": "Informatik GK 2",
-            "room": "N2.05",
+            "room": "N2.04",
             "teacher": "stz",
             "double": true,
             "start": [
@@ -243,7 +231,7 @@
             ]
         },
         {
-            "subject": "Deutsch GK 4",
+            "subject": "D  G4",
             "room": "A2.15",
             "teacher": "ger",
             "double": false,
@@ -287,7 +275,7 @@
     ],
     "friday": [
         {
-            "subject": "Mathematik LK 2",
+            "subject": "M  L2",
             "room": "A2.18",
             "teacher": "hof",
             "double": true,
@@ -312,17 +300,6 @@
             "end": [
                 10,
                 25
-            ]
-        },
-        {
-            "subject": "NONE",
-            "start": [
-                10,
-                30
-            ],
-            "end": [
-                11,
-                15
             ]
         },
         {
@@ -352,15 +329,42 @@
                 14,
                 15
             ]
+        },
+        {
+            "subject": "Abiturientenentlassfeier",
+            "room": "No room specified",
+            "teacher": "\u00dcMi",
+            "double": true,
+            "start": [
+                14,
+                20
+            ],
+            "end": [
+                18,
+                10
+            ]
         }
     ],
     "exceptions": [
         {
-            "day": "friday",
-            "subject": "Informatik GK 2",
+            "subject": "D  G4",
+            "room": "A2.15",
+            "teacher": "ger",
+            "day": "tuesday",
+            "cancelled": true
+        },
+        {
+            "subject": "IF G2",
             "room": "N2.04",
             "teacher": "stz",
-            "double": false,
+            "day": "friday",
+            "cancelled": true
+        },
+        {
+            "subject": "D  G4",
+            "room": "A2.15",
+            "teacher": "ger",
+            "day": "tuesday",
             "cancelled": true
         }
     ]

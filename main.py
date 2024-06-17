@@ -4,8 +4,10 @@ import os
 import time
 import json
 import datetime
+import threading
 from dotenv import load_dotenv
 from pypresence import Presence
+import sync_from_schulmanager as smsync
 
 
 CLIENT = "CLIENT_ID LOADED FROM ENV FILE"
@@ -45,7 +47,7 @@ def get_current_lesson() -> dict:
         current_time_minutes = current_hour * 60 + current_minute
         lesson_start_minutes = lesson["start"][0] * 60 + lesson["start"][1]
         lesson_end_minutes = lesson["end"][0] * 60 + lesson["end"][1]
-        if lesson_start_minutes <= current_time_minutes <= lesson_end_minutes:
+        if lesson_start_minutes <= current_time_minutes < lesson_end_minutes:
             # Check if there is an exception for this lesson
             current_lesson = lesson
             return current_lesson
@@ -87,9 +89,26 @@ def connect_to_discord() -> Presence:
         print(e)
         return None
 
-def update_rpc():
+iteration = 0
+def update_rpc() -> None:
     """Updates the RPC with the current lesson"""
+    global iteration
+    global schedule
+
     while True:
+        if time.localtime().tm_hour < 5 or time.localtime().tm_hour > 18:
+            quit(0)
+
+        # Check if schedule has changed every minute
+        if iteration > 4:
+            with open("C:/Users/Kaenguruu/Desktop/Projects/Python/SchoolRPC/schedule.json", encoding="utf8") as f:
+                data = json.load(f)
+                if "monday" not in data or "tuesday" not in data or "wednesday" not in data or "thursday" not in data or "friday" not in data:
+                    print("schedule.json is not a valid schedule file")
+                else:
+                    schedule = data
+            iteration = 0
+
         # Get current time and day
         current_time = time.localtime()
         week_day_idx = current_time.tm_wday
@@ -119,6 +138,7 @@ def update_rpc():
 
         lesson_start_minutes = current_lesson["start"][0] * 60 + current_lesson["start"][1]
         lesson_end_minutes = current_lesson["end"][0] * 60 + current_lesson["end"][1]
+        current_lesson_changed = False
 
         # Check for unscheduled changes
         for exception in schedule["exceptions"]:
@@ -140,21 +160,33 @@ def update_rpc():
             rpc.update(details=current_lesson["subject"], state="in Raum " + current_lesson["room"], start=start_epoch, end=end_epoch, large_image="logo", large_text="Otto-Kühne-Schule Godesberg")
 
         time.sleep(15)
+        iteration += 1
 
-def main():
+stop_event = threading.Event()
+def update_schedule() -> None:
+    """This function updates the schedule.json file with the current schedule"""
+    while not stop_event.is_set():
+        smsync.sync_schedule()
+        for _ in range(300):
+            if stop_event.is_set():
+                break
+            time.sleep(1)
+
+
+def main() -> None:
     """Load data and wait for available client"""
     global schedule
     global rpc
     global CLIENT
 
-    if time.localtime().tm_wday < 0 or time.localtime().tm_wday > 4:
+    if time.localtime().tm_wday < 0 or time.localtime().tm_wday > 4 or time.localtime().tm_hour < 5 or time.localtime().tm_hour > 18:
         print("This day ain't made for the both of us")
         time.sleep(4)
         return
 
     # Load data
     try:
-        with open("schedule.json", encoding="utf8") as f:
+        with open("C:/Users/Kaenguruu/Desktop/Projects/Python/SchoolRPC/schedule.json", encoding="utf8") as f:
             data = json.load(f)
             if "monday" not in data or "tuesday" not in data or "wednesday" not in data or "thursday" not in data or "friday" not in data:
                 print("schedule.json is not a valid schedule file")
@@ -178,6 +210,14 @@ def main():
         rpc = connect_to_discord()
 
     print("Connected to Discord RPC")
+    thread = threading.Thread(target=update_schedule)
+    thread.start()
+    try:
+        while True:
+            time.sleep(.1)
+    except KeyboardInterrupt:
+        stop_event.set()
+        thread.join()
     update_rpc()
 
 
