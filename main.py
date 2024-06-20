@@ -214,11 +214,11 @@ def main() -> None:
     thread.start()
     try:
         while True:
+            update_rpc()
             time.sleep(.1)
     except KeyboardInterrupt:
         stop_event.set()
         thread.join()
-    update_rpc()
 
 
 main()

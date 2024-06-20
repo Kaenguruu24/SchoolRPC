@@ -1,0 +1,1756 @@
+{
+    "tasks": [
+        {
+            "name": "Geschichte GK 2",
+            "description": "S. 200-202 lesen",
+            "date": {
+                "day": 18,
+                "month": 6,
+                "year": 2024
+            },
+            "id": "ID_task_-7219189730628515443",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 3,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "S. 258 M12 lesen\nS. 259 Nr. 1 \nS. 259 Nr. 2 (in Form einer Tabelle)",
+            "date": {
+                "day": 17,
+                "month": 6,
+                "year": 2024
+            },
+            "id": "ID_task_-2315360440323702398",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 7,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "S. 258 M12 lesen\nS. 259 Nr. 1 \nS. 259 Nr. 2 (in Form einer Tabelle)",
+            "date": {
+                "day": 17,
+                "month": 6,
+                "year": 2024
+            },
+            "id": "ID_task_-2315360440323702398",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 7,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "Erstellen der ppt zum Thema Mobbing (Ansätze M10/M11)\ninkl. mindestens zweier statistischer Datensätze und deren Beschreibung/Erläuterung in der nächsten Stunde (17.06.)",
+            "date": {
+                "day": 12,
+                "month": 6,
+                "year": 2024
+            },
+            "id": "ID_task_3339295655348076786",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 12,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Deutsch GK 4",
+            "description": "AB zu Spielzeit und gespielte Zeit:\nAufgaben 1-5 in Stichworten",
+            "date": {
+                "day": 11,
+                "month": 6,
+                "year": 2024
+            },
+            "id": "ID_task_6411554828685199603",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 14,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "S. 258 Nr. 1+2",
+            "date": {
+                "day": 10,
+                "month": 6,
+                "year": 2024
+            },
+            "id": "ID_task_-6945734462065044997",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 14,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Informatik GK 2",
+            "description": "Rekursion für Fakultät aufschreiben",
+            "date": {
+                "day": 7,
+                "month": 6,
+                "year": 2024
+            },
+            "id": "ID_task_9037879262460029460",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 14,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "Recherche und Vorstellen der Ergebnisse zur Erlebnispädagogik s.",
+            "date": {
+                "day": 5,
+                "month": 6,
+                "year": 2024
+            },
+            "id": "ID_task_-6100658640825381050",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 19,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Mathematik LK 2",
+            "description": "Als HA und für die Doppelstunde am Mittwoch: Üben für die Klausur, u.a. mit S. 299, Aufg. 15 und alten Abiturklausuren",
+            "date": {
+                "day": 28,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_-7484776514710897997",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 24,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Geschichte GK 2",
+            "description": "S. 190-192 lesen",
+            "date": {
+                "day": 28,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_-5210503434486333395",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 24,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Deutsch GK 4",
+            "description": "Hausaufgabe vom 23.5.",
+            "date": {
+                "day": 28,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_-3109417817686346864",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 28,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Englisch GK 3",
+            "description": "Voluntary homework: Discuss to what extent the illustrated utopian and dystopian elements in The Circle have already become reality (with the help of your grid).",
+            "date": {
+                "day": 27,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_8491419724320151552",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 28,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Mathematik LK 2",
+            "description": "30 min an den folgenden Aufgaben arbeiten:\nS. 315/316, Aufg. 7, 9, 10 u. 11\nS. 304, Aufg. 3b) (mit Ungleichung)\nS. 298, Aufg. 11, 12 u. 13",
+            "date": {
+                "day": 24,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_1957362751291370153",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 28,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Religion GK 1",
+            "description": "Nostra Aetate im Gesamten lesen",
+            "date": {
+                "day": 24,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_3601732470610873871",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 28,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Informatik GK 2",
+            "description": "Seite 101 Aufgabe 3 a, b abschließen",
+            "date": {
+                "day": 24,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_-174694944928205472",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 28,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Geschichte GK 2",
+            "description": "Recherche Marokko-Krisen 1905 und 1911 und Balkankriege 1912/13",
+            "date": {
+                "day": 24,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_-1908336469664584938",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 28,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Englisch GK 3",
+            "description": "Interior monologue",
+            "date": {
+                "day": 23,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_3150572289561210932",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 32,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Deutsch GK 4",
+            "description": "Recherchiere den Inhalt von G.Hauptmanns Tragikomödie \"Die Ratten\". Vergleiche das in Aufgabe 3 dargestellte Bühnenbild mit deiner eigenen Idee eines Bühnenbildes (Stichworte)",
+            "date": {
+                "day": 23,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_7482348895681503998",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 33,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Informatik GK 2",
+            "description": "S.100 Nr. 2",
+            "date": {
+                "day": 17,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_5440115977204030851",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 35,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Musik GK 1",
+            "description": "Analyse C-Moll Fuge nachvollziehen, Text Barock (ohne Zitate) lesen und vorbereiten",
+            "date": {
+                "day": 16,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_6544286427541881740",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 39,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Informatik GK 2",
+            "description": "Bestimmt die Anzahl an Karten bei denen der Worst Case 4, 5 oder 6 Vergleiche für die binäre Suche sind.",
+            "date": {
+                "day": 16,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_-7747142319299654927",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 36,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Deutsch GK 4",
+            "description": "keine HA",
+            "date": {
+                "day": 16,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_515559483725470220",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 40,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Mathematik LK 2",
+            "description": "Händisches Lösungsverfahren zur 3x-mindestens-Aufgabe noch einmal anschauen und verstehen.",
+            "date": {
+                "day": 15,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_-2760814919804011961",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 37,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Religion GK 1",
+            "description": "Eigenen Abschnitt des Lückentexts ausfüllen.",
+            "date": {
+                "day": 15,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_-5836355900265499089",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 37,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "S. 250ff Text M8 lesen\n\nS.253 Nr. 1",
+            "date": {
+                "day": 15,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_6043389296635068301",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 40,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Deutsch GK 4",
+            "description": "Analyse \"Wald und Höhle\" in Stichworten",
+            "date": {
+                "day": 14,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_9161638513749109835",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 42,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "S. 249 Nr. 1 mit Hilfe des Schaubildes (Stichpunkte)",
+            "date": {
+                "day": 13,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_-5078308517165587194",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 42,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Mathematik LK 2",
+            "description": "S. 298, Aufg. 9",
+            "date": {
+                "day": 8,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_2452301971780206024",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 44,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Religion GK 1",
+            "description": "AB Welche Religion hat die Wahrheit? - Eigenen Abschnitt bearbeiten und Modell grafisch darstellen.",
+            "date": {
+                "day": 8,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_-6105662938068503208",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 44,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "Analysieren Sie mithilfe des Gewalterklärungsansatzes nach Heitmeyer das gewalttätige Verhalten von ResistantX. \nBeziehen Sie auch Grenzen der Erklärungsmöglichkeiten mit ein.\n(Fließtext mit Zeilenangaben)",
+            "date": {
+                "day": 8,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_-5065034883374914575",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 47,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Geschichte GK 2",
+            "description": "Klausurvorbereitung",
+            "date": {
+                "day": 7,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_3488488910185139341",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 45,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Deutsch GK 4",
+            "description": "Analysiere die Szene \"Gretchens Stube\". Vergleiche sie anschließend mit der Kammerszene aus \"Woyzeck\" im Hinblick auf die Gestaltung der beiden Frauenfiguren.",
+            "date": {
+                "day": 7,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_8382477114728402119",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 49,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "Analysieren Sie mithilfe des Gewalterklärungsansatzes nach Heitmeyer das gewalttätige Verhalten von ResistantX. \nBeziehen Sie auch Grenzen der Erklärungsmöglichkeiten mit ein.\n(Fließtext mit Zeilenangaben)",
+            "date": {
+                "day": 6,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_-5065034883374914575",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 49,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Englisch GK 3",
+            "description": "- Full summary & Analysis (notes only) - means of communication or stylistic means:\n(pp. 258-260: “Mercer looked through his windshield” until “searching for strangers in Dubai”)\n- Read until p. 382 (until May 16)",
+            "date": {
+                "day": 6,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_-5631441196875607268",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 49,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Mathematik LK 2",
+            "description": "S. 293, Aufg. 22 oder / und 24",
+            "date": {
+                "day": 3,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_4202139461654927096",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 49,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Physik LK 1",
+            "description": "Fokus Arbeitsblatt S.119 A1a)b)c) und A2",
+            "date": {
+                "day": 2,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_281163778602886473",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 53,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Deutsch GK 4",
+            "description": "Bereite ein Konzept zur Interpretation der Szene \"Straße\" vor. (V. 2605 - 2677). Berücksichtige alle Aspekte, die du für die Interpretation von Dramenszenen kennst.",
+            "date": {
+                "day": 2,
+                "month": 5,
+                "year": 2024
+            },
+            "id": "ID_task_1140843357769413925",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 54,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Mathematik LK 2",
+            "description": "AB Eigenschaften von Binomialverteilungen fertig bearbeiten",
+            "date": {
+                "day": 30,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-6458763833748990581",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 52,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Geschichte GK 2",
+            "description": "Recherche Benin Bronzen: Was? Wann? Wo? Konflikt? etc.",
+            "date": {
+                "day": 30,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-6994144348830863583",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 52,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Deutsch GK 4",
+            "description": "1.Erkläre, inwiefern man bei der Schüler-Mephisto-Szene von einer Wissenschaftssatire sprechen kann.\n2. Bringe von Zuhause einen Gegenstand mit, den du mit der Figur des Gretchen assoziierst oder der sie in deiner Vorstellung gut verkörpert.",
+            "date": {
+                "day": 30,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-3846750368923329430",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 56,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "Komplettierung des Schaubildes (vgl. S. 242 Aufgabe 4)\nDesintegration(-spotenziale)\nVerunsicherung\nGewalt\n\nZIEL: Vortrag anhand des Schaubildes",
+            "date": {
+                "day": 29,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-7905095388159748384",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 56,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Mathematik LK 2",
+            "description": "S. 284, Aufg. 7\nS. 289, Aufg. 6\nS. 290, Aufg. 9",
+            "date": {
+                "day": 26,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-6848925428427083510",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 56,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Geschichte GK 2",
+            "description": "Erörterung Entschädigungen für Namibia? Ausformuliert!!! (zu Dienstag)",
+            "date": {
+                "day": 26,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-6945119580967552855",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 56,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Physik LK 1",
+            "description": "Erkläre Präsentationsfolien s. 19, 20",
+            "date": {
+                "day": 25,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-8509136110775619791",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 60,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Englisch GK 3",
+            "description": "Task – Choose:\n\nOption 1: Throughout the course of the novel, it seems that Mae distances herself more and more from her family and friends and increasingly devotes her life to The Circle. Comment on this statement.\n\nOption 2: Discuss the following statement: A healthy work-life-balance is the key to happiness.\n\nRead pp. 147-226 until May 2",
+            "date": {
+                "day": 25,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-7821873811780776798",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 60,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Deutsch GK 4",
+            "description": "Bearbeite alle Aufgaben auf dem AB \"Der literarische Faust\" in Stichworten.",
+            "date": {
+                "day": 25,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_4862504000132718015",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 61,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Mathematik LK 2",
+            "description": "Herleitung der Formel von Bernoulli nachvollziehen und verstehen",
+            "date": {
+                "day": 24,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-86420446450281425",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 58,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "S. 242 Nr. 1 (mdl)\nS. 243 Nr. 3 als Fließtext mit Textbelegen",
+            "date": {
+                "day": 24,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_2229600853051267996",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 61,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Geschichte GK 2",
+            "description": "Erörtere, ob Namibia Anspruch auf Entschädigung für den Völkermord 1904/5 geltend machen kann.",
+            "date": {
+                "day": 23,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-152756645057064583",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 59,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Deutsch GK 4",
+            "description": "Vergleiche die beiden Gelehrtengestalten Faust und Wagner anhand der Verse 522-601",
+            "date": {
+                "day": 23,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-4153063091135822934",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 63,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "pädagogische Konsequenzen aus den Statistiken (vgl. S. 239 Nr. 3: Stichpunkte)\n\nBegriffsklärung: Aggression / Gewalt / Mobbing (Text M4)\n\nanschließend S. 241 Nr. 3",
+            "date": {
+                "day": 22,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_6378767500438507421",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 63,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Englisch GK 3",
+            "description": "Read until p. 146",
+            "date": {
+                "day": 22,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-1644105158958858703",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 63,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Mathematik LK 2",
+            "description": "S. 275, Aufg. 9 + 10",
+            "date": {
+                "day": 19,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-6752286458064489925",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 63,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Englisch GK 3",
+            "description": "Weekly plan: Read pp. 79-146",
+            "date": {
+                "day": 18,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_9081608400444005748",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 67,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Deutsch GK 4",
+            "description": "keine HA",
+            "date": {
+                "day": 18,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_515559483725470220",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 68,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Mathematik LK 2",
+            "description": "S. 275, Aufg. 9 + 10",
+            "date": {
+                "day": 17,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-6752286458064489925",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 65,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "Amok in Emsdetten S. 234\nS. 236 Aufgabe 1 (Stichpunkte)\nNr. 2 als Fließtext (Bezug zu Erikson)",
+            "date": {
+                "day": 17,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_5245245494852201131",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 68,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Geschichte GK 2",
+            "description": "Eine Quelle S. 177ff analysieren und oder in Kontext einordnen",
+            "date": {
+                "day": 16,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_2875426288473267109",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 66,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Deutsch GK 4",
+            "description": "Inwiefern kann man von \"Faust\" als \"Prüfstein der Schöpfung\" sprechen?",
+            "date": {
+                "day": 16,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-4249054745438729527",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 70,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "Präsentation zu Kain / Abel vorbereiten und anderen Kursteilnehmer*innen vorstellen können",
+            "date": {
+                "day": 15,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-3943094133892980996",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 70,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Geschichte GK 2",
+            "description": "\"Eigene\" Quelle schriftlich analysieren oder Karikatur S. 177 analysieren",
+            "date": {
+                "day": 12,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-8388908831540073381",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 70,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Musik GK 1",
+            "description": "AB Umkehrungen beenden",
+            "date": {
+                "day": 11,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-4963885605150423602",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 74,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Informatik GK 2",
+            "description": "151 Nr.13 a-c und Nr. 14",
+            "date": {
+                "day": 11,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-7307874917204747297",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 71,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Englisch GK 3",
+            "description": "Start reading (until p. 78) until next Thursday.",
+            "date": {
+                "day": 11,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_8775562187134890678",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 74,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Deutsch GK 4",
+            "description": "Charakterisiere das Publikum, wie es von Goethe im \"Vorspiel auf dem Theater\" dargestellt wird (Stichworte, Zitate)",
+            "date": {
+                "day": 11,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_4613047779779116806",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 75,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "S. 281 \nAufgabe 1 (kurzer Fließtext)\nAufgabe 2 (Ausformulierte Stellungnahme)",
+            "date": {
+                "day": 10,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-1091103679654032096",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 75,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Geschichte GK 2",
+            "description": "Zu Di. 16.4. Übersichtstabelle fertigstellen (\"fremde\" Länder nur in kurzen Stichworten)",
+            "date": {
+                "day": 9,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-607238153874123171",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 73,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Geschichte GK 2",
+            "description": "Zu Di. 16.4. Übersichtstabelle fertigstellen (\"fremde\" Länder nur in kurzen Stichworten)",
+            "date": {
+                "day": 9,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-607238153874123171",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 73,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 21
+            }
+        },
+        {
+            "name": "Englisch PJK 1",
+            "description": "notwendiges Material mitbringen",
+            "date": {
+                "day": 9,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_-5598973275853821714",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 77,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Deutsch GK 4",
+            "description": "\"Faust\" lesen",
+            "date": {
+                "day": 9,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_2010062909643645196",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 77,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 25
+            }
+        },
+        {
+            "name": "Musik GK 1",
+            "description": "Analyse und Interpretation zu Haydns \"Sonnenaufgang\" verschriftlichen",
+            "date": {
+                "day": 8,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_9146098488969882457",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 77,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "Aufgaben zu M4\n\narbeitsteilig: Vorbereitung der Inhalte M7/M8",
+            "date": {
+                "day": 8,
+                "month": 4,
+                "year": 2024
+            },
+            "id": "ID_task_7128658377132344072",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 77,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        },
+        {
+            "name": "Pädagogik GK 1",
+            "description": "Zu Mittwoch nach den Ferien:\nText M4  S. 267f\n\nAufgabe 1 (Stichpunkte/ Textverweise)\nAufgabe 2 als Fließtext\nStellungnahme als argumentativer Text (AFB III)\nGefahren nennen\nBegründung (theoretisch fundiert)",
+            "date": {
+                "day": 20,
+                "month": 3,
+                "year": 2024
+            },
+            "id": "ID_task_-4351659136126088720",
+            "note": null,
+            "category": null,
+            "formulas": [
+                {
+                    "type": "interval",
+                    "number": 96,
+                    "timespan": "days"
+                }
+            ],
+            "end": {
+                "year": 2024,
+                "month": 6,
+                "day": 24
+            }
+        }
+    ]
+}

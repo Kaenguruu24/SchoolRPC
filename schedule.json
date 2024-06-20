@@ -15,6 +15,20 @@
             ]
         },
         {
+            "subject": "Musik GK 1",
+            "room": "A3.2",
+            "teacher": "bok",
+            "double": false,
+            "start": [
+                8,
+                35
+            ],
+            "end": [
+                9,
+                20
+            ]
+        },
+        {
             "subject": "Physik LK 1",
             "room": "A1.09",
             "teacher": "sma",
@@ -44,12 +58,26 @@
         },
         {
             "subject": "Pädagogik GK 1",
-            "room": "A2.18",
+            "room": "N2.05",
             "teacher": "qua",
             "double": true,
             "start": [
                 11,
                 35
+            ],
+            "end": [
+                13,
+                5
+            ]
+        },
+        {
+            "subject": "Pädagogik GK 1",
+            "room": "N2.05",
+            "teacher": "qua",
+            "double": false,
+            "start": [
+                12,
+                20
             ],
             "end": [
                 13,
@@ -66,6 +94,20 @@
             "start": [
                 7,
                 50
+            ],
+            "end": [
+                9,
+                20
+            ]
+        },
+        {
+            "subject": "Geschichte GK 2",
+            "room": "A2.17",
+            "teacher": "ewe",
+            "double": false,
+            "start": [
+                8,
+                35
             ],
             "end": [
                 9,
@@ -112,6 +154,20 @@
             ]
         },
         {
+            "subject": "Englisch PJK 1",
+            "room": "A2.13",
+            "teacher": "qua",
+            "double": false,
+            "start": [
+                12,
+                20
+            ],
+            "end": [
+                13,
+                5
+            ]
+        },
+        {
             "subject": "Deutsch GK 4",
             "room": "A2.15",
             "teacher": "ger",
@@ -126,18 +182,17 @@
             ]
         },
         {
-            "subject": "Sport GK 5",
-            "room": "TH",
-            "teacher": "bsn",
-            "double": true,
-            "two_week_cycle": "even",
+            "subject": "Deutsch GK 4",
+            "room": "A2.15",
+            "teacher": "ger",
+            "double": false,
             "start": [
-                15,
-                10
+                14,
+                20
             ],
             "end": [
-                16,
-                40
+                15,
+                5
             ]
         }
     ],
@@ -150,6 +205,20 @@
             "start": [
                 7,
                 50
+            ],
+            "end": [
+                9,
+                20
+            ]
+        },
+        {
+            "subject": "Physik LK 1",
+            "room": "A1.09",
+            "teacher": "sma",
+            "double": false,
+            "start": [
+                8,
+                35
             ],
             "end": [
                 9,
@@ -199,6 +268,20 @@
             ]
         },
         {
+            "subject": "Mathematik LK 2",
+            "room": "A2.18",
+            "teacher": "hof",
+            "double": false,
+            "start": [
+                12,
+                20
+            ],
+            "end": [
+                13,
+                5
+            ]
+        },
+        {
             "subject": "Sport GK 5",
             "room": "TH",
             "teacher": "bsn",
@@ -211,17 +294,45 @@
                 15,
                 5
             ]
+        },
+        {
+            "subject": "Sport GK 5",
+            "room": "TH",
+            "teacher": "bsn",
+            "double": false,
+            "start": [
+                14,
+                20
+            ],
+            "end": [
+                15,
+                5
+            ]
         }
     ],
     "thursday": [
         {
             "subject": "Informatik GK 2",
-            "room": "N2.05",
+            "room": "N2.04",
             "teacher": "stz",
             "double": true,
             "start": [
                 7,
                 50
+            ],
+            "end": [
+                9,
+                20
+            ]
+        },
+        {
+            "subject": "Informatik GK 2",
+            "room": "N2.04",
+            "teacher": "stz",
+            "double": false,
+            "start": [
+                8,
+                35
             ],
             "end": [
                 9,
@@ -271,6 +382,20 @@
             ]
         },
         {
+            "subject": "Physik LK 1",
+            "room": "A1.09",
+            "teacher": "sma",
+            "double": false,
+            "start": [
+                12,
+                20
+            ],
+            "end": [
+                13,
+                5
+            ]
+        },
+        {
             "subject": "Englisch GK 3",
             "room": "A4.01",
             "teacher": "klj",
@@ -278,6 +403,20 @@
             "start": [
                 13,
                 30
+            ],
+            "end": [
+                15,
+                5
+            ]
+        },
+        {
+            "subject": "Englisch GK 3",
+            "room": "A4.01",
+            "teacher": "klj",
+            "double": false,
+            "start": [
+                14,
+                20
             ],
             "end": [
                 15,
@@ -294,6 +433,20 @@
             "start": [
                 7,
                 50
+            ],
+            "end": [
+                9,
+                20
+            ]
+        },
+        {
+            "subject": "Mathematik LK 2",
+            "room": "A2.18",
+            "teacher": "hof",
+            "double": false,
+            "start": [
+                8,
+                35
             ],
             "end": [
                 9,
@@ -340,6 +493,20 @@
             ]
         },
         {
+            "subject": "Religion GK 1",
+            "room": "A2.18",
+            "teacher": "hof",
+            "double": false,
+            "start": [
+                12,
+                20
+            ],
+            "end": [
+                13,
+                5
+            ]
+        },
+        {
             "subject": "Informatik GK 2",
             "room": "N2.04",
             "teacher": "stz",
@@ -352,15 +519,112 @@
                 14,
                 15
             ]
+        },
+        {
+            "subject": "Abiturientenentlassfeier",
+            "room": "No room specified",
+            "teacher": "ÜMi",
+            "double": true,
+            "start": [
+                14,
+                20
+            ],
+            "end": [
+                15,
+                55
+            ]
+        },
+        {
+            "subject": "Abiturientenentlassfeier",
+            "room": "No room specified",
+            "teacher": "ÜMi",
+            "double": true,
+            "start": [
+                15,
+                10
+            ],
+            "end": [
+                16,
+                40
+            ]
+        },
+        {
+            "subject": "Abiturientenentlassfeier",
+            "room": "No room specified",
+            "teacher": "ÜMi",
+            "double": true,
+            "start": [
+                15,
+                55
+            ],
+            "end": [
+                17,
+                25
+            ]
+        },
+        {
+            "subject": "Abiturientenentlassfeier",
+            "room": "No room specified",
+            "teacher": "ÜMi",
+            "double": true,
+            "start": [
+                16,
+                40
+            ],
+            "end": [
+                18,
+                10
+            ]
+        },
+        {
+            "subject": "Abiturientenentlassfeier",
+            "room": "No room specified",
+            "teacher": "ÜMi",
+            "double": false,
+            "start": [
+                17,
+                25
+            ],
+            "end": [
+                18,
+                10
+            ]
         }
     ],
     "exceptions": [
         {
-            "day": "friday",
-            "subject": "Informatik GK 2",
+            "subject": "PA G1",
+            "room": "A2.18",
+            "teacher": "qua",
+            "day": "wednesday",
+            "cancelled": true
+        },
+        {
+            "subject": "D  G4",
+            "room": "A2.15",
+            "teacher": "ger",
+            "day": "thursday",
+            "cancelled": true
+        },
+        {
+            "subject": "D  G4",
+            "room": "A2.15",
+            "teacher": "ger",
+            "day": "tuesday",
+            "cancelled": true
+        },
+        {
+            "subject": "IF G2",
             "room": "N2.04",
             "teacher": "stz",
-            "double": false,
+            "day": "friday",
+            "cancelled": true
+        },
+        {
+            "subject": "D  G4",
+            "room": "A2.15",
+            "teacher": "ger",
+            "day": "tuesday",
             "cancelled": true
         }
     ]
