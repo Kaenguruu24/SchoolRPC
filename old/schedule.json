@@ -100,6 +100,17 @@
             ]
         },
         {
+            "subject": "NONE",
+            "start": [
+                9,
+                40
+            ],
+            "end": [
+                10,
+                25
+            ]
+        },
+        {
             "subject": "SW Z2",
             "room": "A4.05",
             "teacher": "gro",
@@ -191,6 +202,20 @@
             "teacher": "jsn",
             "double": true,
             "start": [
+                15,
+                55
+            ],
+            "end": [
+                17,
+                25
+            ]
+        },
+        {
+            "subject": "Exkursion",
+            "room": "No room specified",
+            "teacher": "jsn",
+            "double": true,
+            "start": [
                 16,
                 40
             ],
@@ -213,6 +238,17 @@
             "end": [
                 9,
                 20
+            ]
+        },
+        {
+            "subject": "NONE",
+            "start": [
+                9,
+                40
+            ],
+            "end": [
+                10,
+                25
             ]
         },
         {

@@ -2,6 +2,7 @@
 
 import os
 import json
+import glob
 from datetime import datetime
 from datetime import timedelta
 import html_to_json
@@ -14,6 +15,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.firefox import GeckoDriverManager
+
+
+def list_md_files(directory):
+    """Lists all markdown files in a directory."""
+    if not directory.endswith("/"):
+        directory += "/"
+    md_files = glob.glob(os.path.join(directory, "*.md"))
+
+    return md_files
 
 
 def convert(html_content) -> dict:
@@ -60,11 +70,13 @@ def clean_up_schedule(entries) -> list:
         if i + 1 < len(entries) and entries[i]["subject"] == entries[i + 1]["subject"]:
             entry["double"] = True
             entry["end"] = entries[i + 1]["end"]
+            combined_entries.append(entry)
+            i += 1
 
-        combined_entries.append(entry)
         if lesson_to_append is not None:
             combined_entries.append(lesson_to_append)
         i += 1
+
     return combined_entries
 
 
@@ -123,6 +135,7 @@ def load_schedule_from_json(jsondata) -> dict:
         "SP G5": "Sport GK 5",
         "KR G1": "Religion GK 1",
         "IF G2": "Informatik GK 2",
+        "SW ZK": "Sozialwissenschaften ZK 2",
     }
 
     time_table = [
@@ -209,64 +222,77 @@ def load_schedule_from_json(jsondata) -> dict:
 
 
 def clean_up_assignments(assignments, schedule) -> dict:
+    """Cleans up the assignments and adds them to the calendar."""
     events = []
-    data = None
-    with open(
-        "C:/Users/Kaenguruu/Desktop/Schule/.obsidian/plugins/fantasy-calendar/data.json",
-        "r",
-        encoding="utf-8",
-    ) as f:
-        data = json.loads(f.read())
-        existing_assignments = [
-            event for event in data["calendars"][0]["events"] if "task_" in event["id"]
-        ]
 
-        for assignment in assignments:
-            for event in existing_assignments:
-                if (
-                    assignment["task"] == event["description"]
-                    and assignment["subject"] == event["name"]
-                ):
-                    break
+    existing_assignments = []
+
+    for file in list_md_files("C:/Users/Kaenguruu/Desktop/Schule/export/"):
+        with open(file, "r", encoding="utf-8") as f:
+            data = f.read()
+            if "isAssignment: true" in data:
+                existing_assignments.append({"": ""})
+
+    for assignment in assignments:
+        for event in existing_assignments:
+            if (
+                assignment["task"] == event["description"]
+                and assignment["subject"] == event["name"]
+            ):
+                break
+        else:
+            start_timestamp = datetime.fromtimestamp(assignment["start"])
+            end_timestamp = get_next_lesson_for_assignment(assignment, schedule)
+            if (
+                end_timestamp is None
+                or abs((datetime.now() - start_timestamp).days) >= 42
+            ):
+                continue
+            print(assignment["subject"])
+            new_event = {
+                "name": assignment["subject"]
+                + " <"
+                + datetime.fromtimestamp(assignment["start"]).strftime("%d.%m")
+                + " - "
+                + end_timestamp.strftime("%d.%m")
+                + ">",
+                "description": assignment["task"],
+                "date": {
+                    "day": start_timestamp.day,
+                    "month": start_timestamp.month - 1,
+                    "year": start_timestamp.year,
+                },
+                "id": "ID_task_"
+                + str(hash(assignment["task"] + assignment["subject"])),
+                "note": None,
+                "category": next(
+                    (
+                        d
+                        for d in data["calendars"][0]["categories"]
+                        if d["name"] == assignment["subject"]
+                    ),
+                    {"id": None},
+                )["id"],
+                "formulas": [
+                    {
+                        "type": "interval",
+                        "number": 1,
+                        "timespan": "days",
+                    }
+                ],
+                "end": {
+                    "year": end_timestamp.year,
+                    "month": end_timestamp.month - 1,
+                    "day": end_timestamp.day,
+                },
+            }
+            if any(
+                event["name"] == new_event["name"]
+                and event["description"] == new_event["description"]
+                for event in events
+            ):
+                continue
             else:
-                start_timestamp = datetime.fromtimestamp(assignment["start"])
-                end_timestamp = get_next_lesson_for_assignment(assignment, schedule)
-                if (
-                    end_timestamp is None
-                    or (end_timestamp - start_timestamp).days >= 14
-                ):
-                    continue
-                new_event = {
-                    "name": assignment["subject"],
-                    "description": assignment["task"],
-                    "date": {
-                        "day": start_timestamp.day,
-                        "month": start_timestamp.month - 1,
-                        "year": start_timestamp.year,
-                    },
-                    "id": "ID_task_"
-                    + str(hash(assignment["task"] + assignment["subject"])),
-                    "note": None,
-                    "category": "homework-unfinished",
-                    "formulas": [
-                        {
-                            "type": "interval",
-                            "number": 1,
-                            "timespan": "days",
-                        }
-                    ],
-                    "end": {
-                        "year": end_timestamp.year,
-                        "month": end_timestamp.month - 1,
-                        "day": end_timestamp.day,
-                    },
-                }
-                if any(
-                    event["name"] == new_event["name"]
-                    and event["description"] == new_event["description"]
-                    for event in events
-                ):
-                    continue
                 events.append(new_event)
     data["calendars"][0]["events"].extend(events)
     return data
@@ -292,6 +318,7 @@ def load_homework_from_json(jsondata, schedule) -> dict:
         "Katholische Religionslehre": "Religion GK 1",
         "Informatik": "Informatik GK 2",
         "Englisch PJK": "Englisch PJK 1",
+        "Sozialwissenschaften": "Sozialwissenschaften ZK 2",
     }
 
     # Extract assignments
@@ -301,8 +328,13 @@ def load_homework_from_json(jsondata, schedule) -> dict:
         date_obj = datetime.strptime(date_str.split(", ")[1], "%d.%m.%Y")
         timestamp = int(date_obj.timestamp())
         for assignment in day["div"][1]["div"]:
-            subject = assignment["h4"][0]["_value"]
-            task = assignment["p"][0]["span"][0]["_value"]
+            subject = ""
+            task = ""
+            try:
+                subject = assignment["h4"][0]["_value"]
+                task = assignment["p"][0]["span"][0]["_value"]
+            except Exception as e:
+                pass
             assignments.append(
                 {
                     "subject": subject_abbrv[subject],
@@ -326,7 +358,10 @@ def get_next_lesson_for_assignment(assignment, schedule) -> datetime:
         "saturday",
         "sunday",
     ]
-    while weekdays[0] != datetime.now().strftime("%A").lower():
+    while (
+        weekdays[0]
+        != datetime.fromtimestamp(assignment["start"]).strftime("%A").lower()
+    ):
         weekdays.append(weekdays.pop(0))
     weekdays.append(weekdays.pop(0))
 
@@ -346,7 +381,7 @@ def get_next_lesson_for_assignment(assignment, schedule) -> datetime:
                     continue
             if lesson["subject"] == assignment["subject"]:
                 idx = weekdays.index(day) + 1
-                return datetime.now() + timedelta(days=idx)
+                return datetime.fromtimestamp(assignment["start"]) + timedelta(days=idx)
 
     return None
 
@@ -355,7 +390,7 @@ def load_page_data() -> str:
     """Loads the page data from the schulmanager website"""
     load_dotenv(".env")
     webdriver_options = Options()
-    # webdriver_options.add_argument("-headless")
+    webdriver_options.add_argument("-headless")
 
     s = Service(GeckoDriverManager().install())
     driver = webdriver.Firefox(service=s, options=webdriver_options)
@@ -409,13 +444,10 @@ def sync_schedule():
         convert(homework_data), indent=4, ensure_ascii=False
     )
     calendar_data = load_homework_from_json(homework_json_data, schedule)
+    print(calendar_data)
 
     with open("schedule.json", "w", encoding="utf-8") as f:
         f.write(json.dumps(schedule, indent=4, ensure_ascii=False))
 
-    with open(
-        "C:/Users/Kaenguruu/Desktop/Schule/.obsidian/plugins/fantasy-calendar/data.json",
-        "w",
-        encoding="utf-8",
-    ) as f:
-        f.write(json.dumps(calendar_data, indent=4, ensure_ascii=False))
+
+sync_schedule()
